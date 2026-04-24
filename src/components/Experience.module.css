@@ -1,0 +1,113 @@
+.section {
+  padding: 7rem 2.5rem;
+  background: var(--bg2);
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.visible { opacity: 1; transform: none; }
+.inner { max-width: 1200px; margin: 0 auto; }
+.label {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono); font-size: 0.85rem; color: var(--green);
+  margin-bottom: 1.5rem;
+}
+.labelNum { color: var(--green); }
+.labelLine { flex:1; max-width:260px; height:1px; background:var(--border); }
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem,4vw,3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+}
+.timeline { display: flex; flex-direction: column; gap: 0; max-width: 820px; }
+.item {
+  display: flex;
+  gap: 1.5rem;
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 1;
+}
+.timelineLine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+.dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--bg2);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px var(--ecolor, var(--green));
+}
+.line {
+  flex: 1;
+  width: 1px;
+  background: var(--border);
+  margin: 6px 0;
+  min-height: 24px;
+}
+.content {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  flex: 1;
+  transition: border-color 0.2s;
+}
+.content:hover { border-color: var(--ecolor, var(--border2)); }
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.role {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.org {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.period {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text2);
+}
+.type {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text3);
+  background: var(--bg4);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.points { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.point {
+  display: flex; gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text2);
+  line-height: 1.6;
+}
+.bullet { flex-shrink: 0; margin-top: 2px; }
+@media (max-width: 640px) {
+  .section { padding: 5rem 1.5rem; }
+  .contentHeader { flex-direction: column; }
+  .meta { align-items: flex-start; }
+}

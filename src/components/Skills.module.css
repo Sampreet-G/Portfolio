@@ -1,0 +1,92 @@
+.section {
+  padding: 7rem 2.5rem;
+  background: var(--bg2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.visible { opacity: 1; transform: none; }
+.inner { max-width: 1200px; margin: 0 auto; }
+.label {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono); font-size: 0.85rem; color: var(--green);
+  margin-bottom: 1.5rem;
+}
+.labelNum { color: var(--green); }
+.labelLine { flex:1; max-width:260px; height:1px; background:var(--border); }
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem,4vw,3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+.card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 1;
+}
+.card:hover {
+  border-color: var(--card-color, var(--green));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.cardHeader {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 1rem;
+}
+.cardIcon { font-size: 1rem; }
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background: var(--bg4);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  transition: color 0.2s, border-color 0.2s;
+}
+.card:hover .tag { border-color: var(--card-color, var(--border)); color: var(--text); }
+.langRow {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.langLabel {
+  font-family: var(--font-mono); font-size: 0.8rem; color: var(--green);
+}
+.langTag {
+  font-family: var(--font-mono); font-size: 0.8rem;
+  color: var(--text2);
+  padding: 3px 12px;
+  background: var(--bg4);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2,1fr); }
+  .section { padding: 5rem 1.5rem; }
+}
+@media (max-width: 580px) {
+  .grid { grid-template-columns: 1fr; }
+}

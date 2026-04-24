@@ -1,0 +1,288 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 2.5rem;
+}
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}
+.gridBg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#30363D 1px, transparent 1px),
+    linear-gradient(90deg, #30363D 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.08;
+}
+.orb1 {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(126,232,162,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.orb2 {
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(121,192,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 7rem 0 4rem;
+}
+.left > * { animation: fadeUp 0.7s ease forwards; }
+.left > *:nth-child(1) { animation-delay: 0.05s; }
+.left > *:nth-child(2) { animation-delay: 0.15s; }
+.left > *:nth-child(3) { animation-delay: 0.25s; }
+.left > *:nth-child(4) { animation-delay: 0.35s; }
+.left > *:nth-child(5) { animation-delay: 0.45s; }
+.left > *:nth-child(6) { animation-delay: 0.55s; }
+.greeting {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--green);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+.greetMono { color: var(--text3); }
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+.nameAccent {
+  color: var(--green);
+  position: relative;
+}
+.nameAccent::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--green);
+  border-radius: 2px;
+  transform-origin: left;
+  animation: slideRight 0.8s 0.6s ease both;
+}
+.roleRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: var(--text);
+  min-height: 1.5rem;
+}
+.roleMono { color: var(--green); }
+.roleTyped { color: var(--blue); }
+.cursor {
+  color: var(--green);
+  animation: blink 1s step-end infinite;
+  font-weight: 300;
+}
+.tagline {
+  color: var(--text2);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+}
+.cta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(126,232,162,0.25);
+  background: #9ef0b8;
+}
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  transition: background 0.2s, transform 0.2s;
+}
+.btnSecondary:hover {
+  background: rgba(126,232,162,0.08);
+  transform: translateY(-2px);
+}
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text2);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  transition: color 0.2s;
+}
+.socialLink:hover { color: var(--green); }
+.right {
+  animation: fadeUp 0.8s 0.4s ease forwards;
+}
+.codeCard {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.codeHeader {
+  background: var(--bg4);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.fileName {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text2);
+  margin-left: 8px;
+}
+.codeBody {
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--text);
+  overflow-x: auto;
+  white-space: pre;
+}
+.cKey { color: var(--blue); }
+.cStr { color: var(--green); }
+.cNum { color: var(--orange); }
+.cBool { color: var(--purple); }
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.stat {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.stat:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+.statNum {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--green);
+}
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.scrollHint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn 1s 1.5s ease forwards;
+  opacity: 0;
+}
+.scrollText {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--green), transparent);
+  animation: float 2s ease-in-out infinite;
+}
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 6rem 0 3rem;
+  }
+  .hero { padding: 0 1.5rem; }
+  .statsRow { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .name { font-size: 3rem; }
+  .statsRow { grid-template-columns: repeat(2, 1fr); }
+}
