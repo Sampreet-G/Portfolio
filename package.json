@@ -7,8 +7,9 @@
     "react-dom": "^18.2.0"
   },
   "scripts": {
-    "build": "npx --yes vite build",
-    "dev": "npx vite"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.1",
